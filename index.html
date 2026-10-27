@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#681536">
+  <meta name="description" content="Offline management system for BRI'S CUISINE">
+  <title>BRI'S CUISINE · Management</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <noscript>This application requires JavaScript. Please enable it and reload.</noscript>
+
+  <main id="login-screen" class="login-screen" aria-labelledby="login-title">
+    <section class="login-panel">
+      <div class="login-brand">
+        <div class="brand-mark brand-mark-large" aria-hidden="true"><span>B</span><small>C</small></div>
+        <div>
+          <p class="eyebrow">BRI'S CUISINE</p>
+          <h1 id="login-title">Welcome back</h1>
+          <p>Sign in to your department workspace.</p>
+        </div>
+      </div>
+
+      <form id="login-form" class="login-form">
+        <div class="field">
+          <label for="login-username">Username</label>
+          <input id="login-username" name="username" autocomplete="username" required placeholder="Enter username">
+        </div>
+        <div class="field">
+          <label for="login-password">Password</label>
+          <div class="password-wrap">
+            <input id="login-password" name="password" type="password" autocomplete="current-password" required placeholder="Enter password">
+            <button class="icon-button password-toggle" type="button" aria-label="Show password" data-toggle-password="login-password"></button>
+          </div>
+        </div>
+        <p id="login-error" class="form-error" role="alert" hidden></p>
+        <button class="button button-primary button-large" type="submit">Sign in securely</button>
+      </form>
+
+      <div class="offline-note">
+        <span class="status-dot"></span>
+        <div><strong>Offline and private</strong><small>Your records stay in this browser on this device.</small></div>
+      </div>
+    </section>
+
+    <aside class="login-visual" aria-label="Business overview">
+      <div class="visual-copy">
+        <span class="visual-chip">BUSINESS CONTROL CENTRE</span>
+        <h2>Every sale.<br>Every expense.<br><em>One clear picture.</em></h2>
+        <p>Purpose-built for food, snacks & pastries, and drinks—with complete oversight for management.</p>
+      </div>
+      <div class="visual-card">
+        <div class="visual-card-top"><span>Today at a glance</span><span class="live-pill">● LIVE</span></div>
+        <div class="visual-metric"><small>Revenue visibility</small><strong>3 departments</strong></div>
+        <div class="mini-bars" aria-hidden="true"><i style="height:32%"></i><i style="height:45%"></i><i style="height:38%"></i><i style="height:66%"></i><i style="height:58%"></i><i style="height:82%"></i><i style="height:72%"></i></div>
+      </div>
+      <p class="visual-footer">Food · Snacks & Pastries · Drinks</p>
+    </aside>
+  </main>
+
+  <div id="app-shell" class="app-shell" hidden>
+    <aside id="sidebar" class="sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-mark" aria-hidden="true"><span>B</span><small>C</small></div>
+        <div><strong>BRI'S CUISINE</strong><small>Management system</small></div>
+      </div>
+      <nav id="main-nav" class="main-nav" aria-label="Primary navigation"></nav>
+      <div class="sidebar-foot">
+        <button id="account-button" class="user-card" type="button">
+          <span id="user-avatar" class="avatar">BC</span>
+          <span><strong id="user-name">User</strong><small id="user-role">Department</small></span>
+          <span aria-hidden="true">⋮</span>
+        </button>
+        <button id="logout-button" class="button button-ghost sidebar-logout" type="button"></button>
+      </div>
+    </aside>
+    <button id="sidebar-scrim" class="sidebar-scrim" aria-label="Close navigation" hidden></button>
+
+    <section class="workspace">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button id="menu-button" class="icon-button menu-button" type="button" aria-label="Open navigation"></button>
+          <div><p id="page-kicker" class="eyebrow">OVERVIEW</p><h1 id="page-title">Dashboard</h1></div>
+        </div>
+        <div class="topbar-actions">
+          <span id="offline-badge" class="offline-badge"><span class="status-dot"></span> Offline ready</span>
+          <span id="today-label" class="date-label"></span>
+          <button id="quick-action" class="button button-primary" type="button"></button>
+        </div>
+      </header>
+      <div id="default-password-banner" class="security-banner" hidden>
+        <span></span>
+        <p><strong>Secure your account.</strong> You are using the starter password. Change it now.</p>
+        <button class="button button-small button-inverse" data-action="open-account">Change password</button>
+      </div>
+      <main id="page-content" class="page-content" tabindex="-1"></main>
+    </section>
+  </div>
+
+  <div id="modal-root"></div>
+  <div id="toast-region" class="toast-region" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

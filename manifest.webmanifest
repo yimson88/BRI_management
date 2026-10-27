@@ -1,0 +1,10 @@
+{
+  "name": "BRI'S CUISINE Management System",
+  "short_name": "BRI'S CUISINE",
+  "description": "Offline sales, stock, expenditure, reconciliation and reporting.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f6f3ef",
+  "theme_color": "#681536",
+  "icons": []
+}
